@@ -1,6 +1,7 @@
 # Given a string s, find the length of the longest
 # substring without repeating characters
 
+# Faster than 73% of python submissions
 def lengthOfLongestSubstring(s):
     """
     :type s: str
