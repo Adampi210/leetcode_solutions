@@ -9,12 +9,12 @@ def reverse_int_32(x):
     """
     # Initialize variables
     reversed_int = 0
-    if_neg = 1
+    multip_neg = 1
     # If the integer is negative, make it positive and
     # remember to make the result negative
     if x < 0:
         x *= -1
-        if_neg = -1
+        multip_neg = -1
     # Reverse the integer
     while x > 0:
         reversed_int = reversed_int * 10 + x % 10
@@ -23,7 +23,7 @@ def reverse_int_32(x):
     # the 32-bit signed integer limit, return 0
     if reversed_int > INT_32_MAX:
         return 0
-    return reversed_int * if_neg
+    return reversed_int * multip_neg
 
 
 if __name__ == "__main__":
