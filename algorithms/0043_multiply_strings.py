@@ -16,7 +16,7 @@ def multiply(num1, num2):
     # How it should be handled in reality
     num_1 = 0
     num_2 = 0
-    # The sinle digit conversion is feasible to do using C methods
+    # The single digit conversion is feasible to do using C methods
     for s in num1:
         num_1 = num_1 * 10 + int(s)
     for s in num2:
