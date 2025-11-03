@@ -8,11 +8,11 @@ class Solution(object):
         :rtype: List[int]
         """
         # Dictionary to store numbers and their indices
-        seen_map = {}
+        num_map = {}
+        # Iterate through the list of numbers
         for i, num in enumerate(nums):
-            # If the complement (target - num) exists in the map, return the indices
-            if target - num in seen_map:
-                return (seen_map[target - num], i)
-            # Otherwise, add the current number and its index to the map
-            seen_map[num] = i
-    
+            # Check if the complement (target - num) exists in the dictionary
+            if target - num in num_map:
+                return (num_map[target - num], i)
+            # Store the number and its index in the dictionary
+            num_map[num] = i
