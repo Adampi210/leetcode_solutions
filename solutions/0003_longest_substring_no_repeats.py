@@ -1,8 +1,6 @@
 # Given a string s, find the length of the longest
 # substring without repeating characters
 
-
-# Faster than 73% of python submissions
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
