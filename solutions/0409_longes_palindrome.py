@@ -35,3 +35,36 @@ class Solution(object):
         # The total length of the longest palindrome 
         # is the sum of max_len_even and if_odd
         return max_len_even + if_odd
+
+# Another possible solution is to use a set and track characters with even counts
+# It works in-time, i.e. after iterating over the string once
+# The way it works: for any character not in the set, we add it
+# If we see it again, we remove it from the set and increase the total length by 2
+# At the end, if the set is not empty, we can add 1 to the total length
+# since we can place one odd character in the center of the palindrome
+class SolutionSet(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        # Initialize an empty set to track characters with odd counts
+        char_set = set()
+        # Initialize the total length of the palindrome
+        total_len = 0
+        # Iterate through each character in the string
+        for char_s in s:
+            # If the character is already in the set, it means we've seen it an even number of times
+            if char_s in char_set:
+                # Remove it from the set and increase total_len by 2
+                char_set.remove(char_s)
+                total_len += 2
+            else:
+                # If it's not in the set, add it (indicating an odd count)
+                char_set.add(char_s)
+        # After processing all characters, if the set is not empty,
+        # it means we have at least one character with an odd count
+        # We can place one such character in the center of the palindrome
+        if char_set:
+            total_len += 1
+        return total_len
