@@ -10,12 +10,14 @@
 # If there is a cycle, the fast pointer will eventually meet the slow pointer
 # Since the relative speed between the two pointers is 1 step per move
 # So if there is a cycle, they will meet within n moves (where n is the number of nodes in the cycle)
+# NOTE: VERY COMMON to use 2 pointers when dealing with linked lists
+# Other problems also use this technique (e.g., finding the middle of a linked list)
 
 # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
 from collections import deque
 
